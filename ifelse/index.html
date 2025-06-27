@@ -6,6 +6,34 @@
     <title>Document</title>
   </head>
   <body>
-    <script src="main.js"></script>
+    <button onclick="jouerShifumi()">Jouer à Shifumi</button>
+    <script>
+      function choixOrdinateur() {
+        const choix = ["pierre", "feuille", "ciseaux"];
+        return choix[Math.floor(Math.random() * choix.length)];
+      }
+
+      function determinerGagnant(joueur, ordinateur) {
+        if (joueur === ordinateur) return "Égalité !";
+        if (
+          (joueur === "pierre" && ordinateur === "feuille") ||
+          (joueur === "feuille" && ordinateur === "ciseaux") ||
+          (joueur === "ciseaux" && ordinateur === "pierre")
+        ) {
+          return "Tu perds !";
+        }
+        return "Tu gagnes !";
+      }
+
+      function jouerShifumi() {
+        const joueur = prompt("Choisissez entre pierre, feuille ou ciseaux");
+        const ordinateur = choixOrdinateur();
+        const resultat = determinerGagnant(joueur, ordinateur);
+        // utiliser \n pour sauter à la ligne
+        alert(
+          `Ordinateur : ${ordinateur}\nVous : ${joueur}\nRésultat : ${resultat}`
+        );
+      }
+    </script>
   </body>
 </html>

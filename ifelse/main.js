@@ -117,21 +117,3 @@ console.log("coucou");
 // }
 // console.log("Compte à Rebours depuis 5:");
 // compteARebours(5);
-
-function choixOrdinateur(...choix) {
-  if (choix.length === 0) {
-    throw new Error("Aucun choix fourni.");
-  }
-  return choix[Math.floor(Math.random() * choix.length)];
-}
-let choix = choixOrdinateur("pierre", "feuille", "ciseaux");
-console.log("Choix de l'ordinateur :", choix);
-
-function determinerGagnant(joueur, ordinateur) {
-  // DeterminerGagnant, ce serait des if pour les différents cas, check si le choixOrdinateur === le choix du joueur, donc une égalité, puis déterminer quel genre, "if choixJoueur === ciseau && choixOrdinateur === feuille alors victoire"
-}
-
-function jouerShifumi() {
-  prompt("Choisissez entre pierre, feuille ou ciseaux");
-  let choix = prompt("Choisissez entre pierre, feuille ou ciseaux");
-}
